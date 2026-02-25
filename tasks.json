@@ -1,0 +1,5 @@
+{
+  "task": "setup_environment",
+  "environment": "python",
+  "project_name": "TestPythonApp"
+}
