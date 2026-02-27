@@ -1,5 +1,5 @@
 import json
-from src.task_runner import run_task
+from controllers.task_runner import run_task
 
 def main():
     with open("tasks.json", "r") as file:

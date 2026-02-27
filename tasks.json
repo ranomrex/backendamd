@@ -1,5 +1,7 @@
 {
-  "task": "setup_environment",
-  "environment": "python",
-  "project_name": "TestPythonApp"
+  "task": "open_split_screen",
+  "apps": {
+    "Notepad": "notepad.exe",
+    "Calculator": "calc.exe"
+  }
 }
