@@ -1,0 +1,37 @@
+// {
+//     "reference_guide": [
+//         {
+//             "_description": "1. Setup Java Environment",
+//             "task": "setup_environment",
+//             "environment": "java",
+//             "project_name": "MyJavaApp"
+//         },
+//         {
+//             "_description": "2. Setup Python Environment",
+//             "task": "setup_environment",
+//             "environment": "python",
+//             "project_name": "MyPythonProject"
+//         },
+//         {
+//             "_description": "3. Rename Files in a Folder",
+//             "task": "rename_files_in_folder",
+//             "target_folder": "controllers",
+//             "files_to_rename": {
+//                 "api_data.txt": "api_data_backup.txt",
+//                 "old_name.py": "new_name.py"
+//             }
+//         },
+//         {
+//             "_description": "4. Undo Last File Rename",
+//             "task": "undo"
+//         },
+//         {
+//             "_description": "5. Open Apps in Split Screen",
+//             "task": "open_split_screen",
+//             "apps": {
+//                 "Notepad": "notepad.exe",
+//                 "Calculator": "calc.exe"
+//             }
+//         }
+//     ]
+// }

@@ -1,7 +1,0 @@
-{
-  "task": "open_split_screen",
-  "apps": {
-    "Notepad": "notepad.exe",
-    "Calculator": "calc.exe"
-  }
-}
