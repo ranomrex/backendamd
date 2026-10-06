@@ -1,24 +1,20 @@
-from controllers import environment_controller
-from controllers import file_manager  
-from controllers import window_manager 
+"""Dispatcher: sends each task to the controller that handles it."""
+from controllers import environment_controller, file_manager, window_manager
+
+# task name -> function that handles it
+HANDLERS = {
+    "setup_environment": environment_controller.handle_environment_task,
+    "rename_files_in_folder": file_manager.handle_file_task,
+    "undo": file_manager.handle_file_task,
+    "open_split_screen": window_manager.handle_window_task,
+}
+
 
 def run_task(task_data):
-    task_name = task_data.get("task") or task_data.get("action")
-
-    # Route Environments
-    if task_name == "setup_environment":
-        print("Routing to Environment Controller...")
-        environment_controller.handle_environment_task(task_data)
-
-    # Route File Operations (Rename AND Undo)
-    elif task_name in ["rename_files_in_folder", "undo"]:
-        print("Routing to File Manager...")
-        file_manager.handle_file_task(task_data) 
-
-    # Route Window Splits
-    elif task_name == "open_split_screen":
-        print("Routing to Window Manager...")
-        window_manager.handle_window_task(task_data)
-
-    else:
-        print(f"Unknown task: {task_name}")
+    name = task_data.get("task") or task_data.get("action")
+    handler = HANDLERS.get(name)
+    if handler is None:
+        print(f"Unknown task: {name}")
+        return
+    print(f"Running '{name}' with {handler.__module__}...")
+    handler(task_data)

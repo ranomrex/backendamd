@@ -1,0 +1,24 @@
+[
+    {
+        "task": "setup_environment",
+        "environment": "python",
+        "project_name": "MyPythonProject"
+    },
+    {
+        "task": "rename_files_in_folder",
+        "target_folder": "demo",
+        "files_to_rename": {
+            "old_name.txt": "new_name.txt"
+        }
+    },
+    {
+        "task": "undo"
+    },
+    {
+        "task": "open_split_screen",
+        "apps": {
+            "Notepad": "notepad.exe",
+            "Calculator": "calc.exe"
+        }
+    }
+]

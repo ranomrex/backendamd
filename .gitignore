@@ -1,2 +1,7 @@
 myenv/
+venv/
 __pycache__/
+*.pyc
+history.json
+.pytest_cache/
+.env
