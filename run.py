@@ -3,6 +3,7 @@
 Usage:
     python run.py                    # reads tasks.json
     python run.py my_tasks.json      # reads another file
+Exit code is 1 if any task failed.
 """
 import json
 import sys
@@ -22,8 +23,11 @@ def main():
 
     # A file can hold one task (an object) or several (a list).
     tasks = data if isinstance(data, list) else [data]
-    for task in tasks:
-        run_task(task)
+    results = [run_task(task) for task in tasks]
+
+    failed = [r for r in results if r["status"] == "error"]
+    print(f"\nDone: {len(results) - len(failed)} ok, {len(failed)} failed.")
+    sys.exit(1 if failed else 0)
 
 
 if __name__ == "__main__":
